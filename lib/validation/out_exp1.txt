@@ -1,0 +1,127 @@
+
+########################################################
+type Id:2240	variance:0.005522	stddev:0.074307	nums:11224
+
+type Id:2524	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2192	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2264	variance:0.004772	stddev:0.069076	nums:6
+
+type Id:6172	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7623	variance:0.000338	stddev:0.018394	nums:3
+
+type Id:7217	variance:0.000325	stddev:0.018029	nums:10
+
+type Id:2354	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7476	variance:0.014292	stddev:0.119547	nums:11
+
+type Id:7006	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:6388	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2363	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2880	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2882	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2884	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:211	variance:0.002923	stddev:0.054064	nums:196
+
+type Id:2250	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2522	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7226	variance:0.000014	stddev:0.003781	nums:26
+
+type Id:226	variance:0.002081	stddev:0.045619	nums:38
+
+type Id:7523	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:6244	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2022	variance:0.001637	stddev:0.040456	nums:4
+
+type Id:2411	variance:0.001827	stddev:0.042748	nums:2
+
+type Id:7023	variance:0.000866	stddev:0.029423	nums:4
+
+type Id:6384	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:1139	variance:0.000384	stddev:0.019589	nums:7
+
+type Id:200	variance:0.002641	stddev:0.051388	nums:709
+
+type Id:6378	variance:0.000240	stddev:0.015489	nums:2
+
+type Id:7038	variance:0.000000	stddev:0.000000	nums:1
+################################################################################################################
+type Id:2488	variance:0.002022	stddev:0.044966	nums:31050
+
+type Id:2829	variance:0.001736	stddev:0.041661	nums:12982
+
+type Id:6197	variance:0.001955	stddev:0.044219	nums:2202
+########################################################
+type Id:2488	variance:0.002022	stddev:0.044966	nums:31050
+
+type Id:2829	variance:0.001736	stddev:0.041661	nums:12982
+
+type Id:6197	variance:0.001955	stddev:0.044219	nums:2202
+########################################################
+type Id:2488	variance:0.334752	stddev:0.578578	nums:31050
+
+type Id:2829	variance:0.332713	stddev:0.576813	nums:12982
+
+type Id:6197	variance:0.334656	stddev:0.578494	nums:2202
+########################################################
+type Id:200	variance:0.334311	stddev:0.578196	nums:709
+
+type Id:7008	variance:0.342705	stddev:0.585410	nums:1141
+
+type Id:1165	variance:0.336535	stddev:0.580116	nums:2875
+
+type Id:2462	variance:0.329197	stddev:0.573757	nums:3876
+########################################################
+type Id:200	variance:0.002641	stddev:0.051388	nums:709
+
+type Id:7008	variance:0.003606	stddev:0.060047	nums:1141
+
+type Id:1165	variance:0.002627	stddev:0.051253	nums:2875
+
+type Id:2462	variance:0.001316	stddev:0.036276	nums:3876
+########################################################
+type Id:200	variance:0.002641	stddev:0.051388	nums:709
+
+type Id:7008	variance:0.003606	stddev:0.060047	nums:1141
+
+type Id:1165	variance:0.002627	stddev:0.051253	nums:2875
+
+type Id:2462	variance:0.001316	stddev:0.036276	nums:3876
+########################################################
+type Id:200	variance:0.332851	stddev:0.576932	nums:709
+
+type Id:7008	variance:0.338835	stddev:0.582095	nums:1141
+
+type Id:1165	variance:0.336683	stddev:0.580244	nums:2875
+
+type Id:2462	variance:0.328880	stddev:0.573480	nums:3876
+########################################################
+type Id:200	variance:0.333842	stddev:0.577790	nums:709
+
+type Id:7008	variance:0.338834	stddev:0.582094	nums:1141
+
+type Id:1165	variance:0.334855	stddev:0.578667	nums:2875
+
+type Id:2462	variance:0.329746	stddev:0.574235	nums:3876
+########################################################
+type Id:200	variance:0.336387	stddev:0.579989	nums:709
+
+type Id:7008	variance:0.336715	stddev:0.580271	nums:1141
+
+type Id:1165	variance:0.338764	stddev:0.582035	nums:2875
+
+type Id:2462	variance:0.329186	stddev:0.573748	nums:3876

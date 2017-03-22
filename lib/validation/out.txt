@@ -1,0 +1,386 @@
+type Id:2208    mean:-0.006483	variance:0.370165	stddev:0.608412
+type Id:2206    mean:-0.004509	variance:0.360146	stddev:0.600122
+type Id:2593    mean:-0.022180	variance:0.359278	stddev:0.599398
+type Id:2210    mean:-0.006231	variance:0.364977	stddev:0.604134
+type Id:2214    mean:0.023195	variance:0.427398	stddev:0.653757
+type Id:20010   mean:0.002474	variance:0.330603	stddev:0.574981
+type Id:6198    mean:-0.001170	variance:0.341576	stddev:0.584445
+type Id:2368    mean:-0.020638	variance:0.351288	stddev:0.592696
+type Id:2891    mean:0.008624	variance:0.359411	stddev:0.599509
+type Id:2872    mean:0.022417	variance:0.393907	stddev:0.627620
+type Id:7013    mean:0.040830	variance:0.301979	stddev:0.549527
+type Id:7526    mean:-0.006918	variance:0.360005	stddev:0.600004
+type Id:6254    mean:-0.007716	variance:0.780598	stddev:0.883514
+type Id:6386    mean:0.008309	variance:0.420709	stddev:0.648620
+
+########################################################
+
+type Id:6379	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2902	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7050	variance:0.262359	stddev:0.512210	nums:4
+
+type Id:7437	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2190	variance:0.159333	stddev:0.399165	nums:2
+
+type Id:7513	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:6180	variance:0.158256	stddev:0.397814	nums:2
+
+type Id:2524	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2239	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7006	variance:0.291813	stddev:0.540197	nums:9
+
+type Id:2262	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2355	variance:0.339699	stddev:0.582837	nums:44
+
+type Id:7221	variance:0.336905	stddev:0.580435	nums:174
+
+type Id:7476	variance:0.327025	stddev:0.571861	nums:37
+
+type Id:2882	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:20035	variance:0.332313	stddev:0.576466	nums:144
+
+type Id:6183	variance:0.338249	stddev:0.581592	nums:3662
+
+type Id:6214	variance:0.343539	stddev:0.586122	nums:243
+
+type Id:7113	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7021	variance:0.155995	stddev:0.394962	nums:2
+
+type Id:2829	variance:0.336323	stddev:0.579933	nums:17250
+
+type Id:7510	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:20066	variance:0.252678	stddev:0.502671	nums:4
+
+type Id:6203	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:6244	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7016	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:236	variance:0.319786	stddev:0.565496	nums:24
+
+type Id:6254	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7024	variance:0.170647	stddev:0.413094	nums:2
+
+type Id:7025	variance:0.330187	stddev:0.574619	nums:27
+
+type Id:7035	variance:0.310978	stddev:0.557654	nums:11
+
+type Id:2175	variance:0.000000	stddev:0.000000	nums:1
+########################################################
+type Id:1155	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7050	variance:0.262359	stddev:0.512210	nums:4
+
+type Id:2190	variance:0.159333	stddev:0.399165	nums:2
+
+type Id:1169	variance:0.332720	stddev:0.576818	nums:13103
+
+type Id:7470	variance:0.335176	stddev:0.578944	nums:2268
+
+type Id:2469	variance:0.378624	stddev:0.615324	nums:18
+
+type Id:6172	variance:0.334176	stddev:0.578079	nums:11774
+
+type Id:7214	variance:0.337483	stddev:0.580933	nums:1446
+
+type Id:6321	variance:0.336682	stddev:0.580243	nums:1501
+
+type Id:2270	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:6198	variance:0.339796	stddev:0.582920	nums:22500
+
+type Id:2621	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2240	variance:0.347177	stddev:0.589217	nums:20180
+
+type Id:7090	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7051	variance:0.296233	stddev:0.544273	nums:8
+
+type Id:2887	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:6216	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2892	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:226	variance:0.336790	stddev:0.580337	nums:100
+
+type Id:7511	variance:0.353724	stddev:0.594747	nums:287
+
+type Id:2268	variance:0.216064	stddev:0.464827	nums:3
+
+type Id:199	variance:0.333401	stddev:0.577409	nums:5286
+
+type Id:7008	variance:0.344683	stddev:0.587097	nums:1647
+
+type Id:7266	variance:0.257245	stddev:0.507193	nums:5
+
+type Id:7523	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:229	variance:0.279084	stddev:0.528284	nums:5
+
+type Id:7603	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7229	variance:0.174907	stddev:0.418219	nums:2
+
+type Id:2355	variance:0.339699	stddev:0.582837	nums:44
+
+type Id:241	variance:0.333926	stddev:0.577863	nums:146
+
+type Id:7028	variance:0.000000	stddev:0.000000	nums:1
+########################################################
+type Id:7625	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:6379	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2198	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2183	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7469	variance:0.296577	stddev:0.544589	nums:11
+
+type Id:7062	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2589	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2022	variance:0.274365	stddev:0.523799	nums:4
+
+type Id:2208	variance:0.334529	stddev:0.578385	nums:14229
+
+type Id:6180	variance:0.158256	stddev:0.397814	nums:2
+
+type Id:20013	variance:0.325825	stddev:0.570811	nums:37
+
+type Id:7087	variance:0.307842	stddev:0.554835	nums:8
+
+type Id:200	variance:0.339544	stddev:0.582704	nums:1208
+
+type Id:7091	variance:0.244381	stddev:0.494349	nums:2
+
+type Id:7220	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7225	variance:0.173304	stddev:0.416298	nums:2
+
+type Id:223	variance:0.331738	stddev:0.575967	nums:2113
+
+type Id:7114	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:20032	variance:0.327670	stddev:0.572425	nums:54
+
+type Id:2882	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:20035	variance:0.332313	stddev:0.576466	nums:144
+
+type Id:7103	variance:0.221568	stddev:0.470710	nums:3
+
+type Id:7623	variance:0.227007	stddev:0.476452	nums:3
+
+type Id:2252	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2262	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2522	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:20063	variance:0.221998	stddev:0.471166	nums:3
+
+type Id:224	variance:0.296086	stddev:0.544138	nums:6
+
+type Id:7522	variance:0.334820	stddev:0.578636	nums:678
+
+type Id:7014	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:6387	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:6380	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2254	variance:0.311475	stddev:0.558100	nums:17
+
+type Id:7015	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2293	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7525	variance:0.329580	stddev:0.574090	nums:112
+
+type Id:2239	variance:0.000000	stddev:0.000000	nums:1
+########################################################
+type Id:6230	variance:0.324528	stddev:0.569673	nums:16
+
+type Id:2264	variance:0.304276	stddev:0.551612	nums:16
+
+type Id:6190	variance:0.169530	stddev:0.411741	nums:2
+
+type Id:7062	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7063	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7630	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7093	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2462	variance:0.334190	stddev:0.578091	nums:5935
+
+type Id:2208	variance:0.334529	stddev:0.578385	nums:14229
+
+type Id:2593	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2469	variance:0.378624	stddev:0.615324	nums:18
+
+type Id:20008	variance:0.333575	stddev:0.577559	nums:9709
+
+type Id:7524	variance:0.335995	stddev:0.579651	nums:97
+
+type Id:7470	variance:0.335176	stddev:0.578944	nums:2268
+
+type Id:7476	variance:0.327025	stddev:0.571861	nums:37
+
+type Id:6203	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:6205	variance:0.337075	stddev:0.580581	nums:303
+
+type Id:7230	variance:0.164962	stddev:0.406155	nums:2
+
+type Id:7090	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7104	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2881	variance:0.283112	stddev:0.532083	nums:8
+
+type Id:199	variance:0.333401	stddev:0.577409	nums:5286
+
+type Id:2892	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:205	variance:0.340511	stddev:0.583533	nums:408
+
+type Id:6358	variance:0.336737	stddev:0.580290	nums:5274
+
+type Id:2006	variance:0.330696	stddev:0.575062	nums:16
+
+type Id:2266	variance:0.250512	stddev:0.500512	nums:4
+
+type Id:20068	variance:0.325160	stddev:0.570228	nums:50
+
+type Id:7525	variance:0.329580	stddev:0.574090	nums:112
+
+type Id:7015	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7528	variance:0.318027	stddev:0.563939	nums:24
+
+type Id:7117	variance:0.158971	stddev:0.398712	nums:2
+
+type Id:6380	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:232	variance:0.323958	stddev:0.569173	nums:30
+
+type Id:1139	variance:0.289461	stddev:0.538016	nums:8
+
+type Id:6130	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:6142	variance:0.335579	stddev:0.579292	nums:2168
+
+type Id:202	variance:0.335307	stddev:0.579057	nums:2257
+########################################################
+type Id:7122	variance:0.270233	stddev:0.519840	nums:5
+
+type Id:2563	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7277	variance:0.255485	stddev:0.505455	nums:4
+
+type Id:1168	variance:0.337213	stddev:0.580700	nums:2166
+
+type Id:2202	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2207	variance:0.337177	stddev:0.580669	nums:2774
+
+type Id:2525	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:6322	variance:0.336392	stddev:0.579993	nums:275
+
+type Id:6205	variance:0.337075	stddev:0.580581	nums:303
+
+type Id:6210	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:6340	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:20001	variance:0.331815	stddev:0.576034	nums:472
+
+type Id:2890	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7114	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:20056	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2522	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:6237	variance:0.338464	stddev:0.581777	nums:1500
+
+type Id:6387	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7527	variance:0.324898	stddev:0.569998	nums:31
+
+type Id:7016	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2872	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7534	variance:0.334917	stddev:0.578721	nums:143
+
+type Id:239	variance:0.306533	stddev:0.553654	nums:9
+
+type Id:7028	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2293	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7061	variance:0.310372	stddev:0.557111	nums:8
+########################################################
+type Id:20012	variance:0.324662	stddev:0.569791	nums:68
+
+type Id:7094	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7033	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2462	variance:0.327140	stddev:0.571962	nums:502
+
+type Id:20001	variance:0.321680	stddev:0.567168	nums:22
+
+type Id:20005	variance:0.154620	stddev:0.393217	nums:2
+
+type Id:2214	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:6322	variance:0.314921	stddev:0.561178	nums:17
+
+type Id:6188	variance:0.213104	stddev:0.461632	nums:3
+
+type Id:7214	variance:0.324473	stddev:0.569625	nums:168
+
+type Id:7093	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2378	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:203	variance:0.283299	stddev:0.532259	nums:6
+
+type Id:6225	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:211	variance:0.327978	stddev:0.572694	nums:95
+
+type Id:5207	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:2469	variance:0.307055	stddev:0.554126	nums:14
+
+type Id:7524	variance:0.313271	stddev:0.559706	nums:27
+
+type Id:2250	variance:0.000000	stddev:0.000000	nums:1
+
+type Id:7019	variance:0.167567	stddev:0.409350	nums:2
+
+type Id:6383	variance:0.000000	stddev:0.000000	nums:1

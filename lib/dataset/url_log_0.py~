@@ -1,0 +1,283 @@
+# -*- coding=utf-8 -*-
+# from __future__ import absolute_import
+# from __future__ import division
+# from __future__ import print_function
+
+import cPickle as pickle
+import collections
+import os
+import sys
+import math
+import numpy as np
+import pandas as pd
+
+# from six.moves import xrange
+
+sys.path.append('..')
+import dataset
+import urlvacob
+
+filepath = os.path.join(os.path.dirname(__file__), '../..', 'data', 'log_data')
+filelist = os.listdir(filepath)
+pd.set_option('display.encoding', 'UTF-8')
+
+class UrlRoute(urlvacob.UrlVacob):
+
+    def __init__(self, name, urlnum_max, data_path=None, recordlen_min=3, rand_biase=0):
+        """
+        :param name: string, the data file name
+        :param urlnum_max: int, the max numbers of url
+        :param data_path: the directory of the data. data_path
+        :param recordlen_min: the minimal length of the url routes
+        :param rand_biase: a random value to build a different dataset between different server
+        """
+        urlvacob.UrlVacob.__init__(self, '', urlnum_max, 1)
+        self._name = name
+        self._data_path = self._get_default_path() if data_path == None \
+            else data_path
+        self._cache_path = os.path.join(dataset.ROOT_DIR, 'data', 'cache')
+        self._rcdlen_min = recordlen_min
+        self._window = 3 #default
+        self._data_index = rand_biase
+        self._routes = list()
+
+
+    def _load_excel(self, path, sheetname=None):
+        """ """
+        assert os.path.exists(path), \
+            'path does not exist: {}'.format(path)
+        return pd.read_excel(path, sheetname)
+
+
+    def _sort_and_build_vacob_from_chunk(self, chunk):
+        """ add the url to vacob and sort the chunk by ['IPTONUMBER', 'TIME']
+            :param chunk: Dataframe, mainly use the coloumn
+            :return the sorted chunk
+        """
+        self.create_url_vacob_from_list(chunk['request_url'].tolist())
+        referer_url = chunk[chunk['request_url'] != '-1']['referer_url']
+        self.create_url_vacob_from_list(referer_url.tolist())
+        return chunk.sort_values(['iptonumber', 'visit_time'])
+
+    def _get_route_from_chunk(self, chunk, loaded=False, vacob_dic=None):
+        """
+        get the valid routes from chunk
+        :param chunk: DataFrame, with four col ['TIME',
+                'IPTONUMBER', 'REQUEST_URL', 'REFERER_URL']
+        :param loaded: boolean, if true the vacob has been already build
+        :param vacob_dic: dict, {'url':index}
+        :return:
+        """
+
+        row_iter = chunk.itertuples()
+        ip_series = chunk['iptonumber'].tolist()
+        last_ip = ip_series[0]
+        path_list = list()
+
+        def update_path(path):
+            new = []
+            for url in path:
+                if url in vacob_dic:
+                    new.append(vacob_dic[url])
+                else:
+                    new.append(0)
+            return new
+        while True:
+            try:
+                # row[1]:time, row[2]:IP, row[3]:Request, row[4]:referer
+                row = next(row_iter)
+                if last_ip != row[2]:
+                    # create a new empty pathlist for the new ip and update the self._routes
+                    for path in path_list:
+                        if len(path) < self._rcdlen_min:
+                            continue
+                        if loaded:
+                            path = update_path(path)
+                        self._routes = self._routes + [-1] + path
+
+                    new_path = [row[4], row[3]] if row[4] != "-1" else [row[3]]
+                    path_list = [new_path]
+                    last_ip = row[2]
+
+                else:
+                    change = False
+                    # search the path_list to find a path to append with url
+                    len_list = len(path_list)
+                    for i in xrange(len_list):
+                        # begin at the last path and  search forword
+                        path = path_list[len_list - i - 1]
+                        len_path = len(path)
+                        for j in xrange(len_path):
+                            if row[4] == path[len_path - j - 1]:
+                                # find the proper path and the index
+                                # create a new path by combining the slice of path and new url
+                                if j == 0:
+                                    path.append(row[3])
+                                else:
+                                    new_path = path[0: len_path - j] + [row[3]]
+                                    path_list.append(new_path)
+                                change = True
+                                break
+                        break
+                    if not change:
+                        # do not search a proper path in the exist path_list
+                        # using new url create the new path
+                        new_path = [row[4], row[3]] if row[4] != "-1" else [row[3]]
+                        path_list.append(new_path)
+            except StopIteration:
+                for path in path_list:
+                    if len(path) < self._rcdlen_min:
+                        continue
+                    if loaded:
+                        path = update_path(path)
+                    self._routes = self._routes + [-1] + path
+                break
+
+    def build_dataset(self):
+
+        cache = os.path.join(self._cache_path, self._name + '.dat')
+        loaded = False
+        vacob_dic, reverse_vacob = None, None
+        if os.path.exists(cache):
+            with open(cache, 'rb') as file_obj:
+                db = pickle.load(file_obj)
+                self.set_vacob(db['vacob'])
+                # generate the dict vacob{'url': index} and reverse_vacob{index: 'url'}
+                words = []
+                for i in xrange(len(self.vacob)):
+                    words.append(self.vacob[i][0])
+                reverse_vacob = dict(zip(xrange(len(self.vacob)), words))
+                vacob_dic = dict(zip(words, xrange(len(self.vacob))))
+                del words
+                loaded = True
+            print '{} loaded from cache {}'.format(self._name, cache)
+
+            # return db['vacob'], db['routes'], db['reverse_vacob']
+
+
+        file_path = os.path.join(self._data_path, self._name)
+        assert os.path.exists(file_path), \
+            'path does not exist: {}'.format(file_path)
+        # 载入以csv格式保存的文件
+        reader = pd.read_csv(file_path, sep=',', header=0,
+                            # parse_dates={'TIME': [2, 3]},
+			     chunksize=100000, encoding='utf-8')
+        j =  0
+        for chunk in reader:
+            # step 1: add the chunk's data to vacob, include the request url
+            # and the referer url. the url must be non-null
+            if not loaded:
+                print "_sort_and_build_vacob_from_chunk_%d" % j
+                self._sort_and_build_vacob_from_chunk(chunk)
+            print "get_route_from_chunk_%d" % j
+	    j += 1
+            # step 2: aquire the route(represented as url) from the chunk
+            self._get_route_from_chunk(
+                chunk[['visit_time', 'iptonumber', 'request_url', 'referer_url']],
+                loaded=loaded,
+                vacob_dic=vacob_dic)
+            
+
+        if not loaded:
+            # sort the total vacob
+            print "sorting the vacob begin"
+            self.sort_vacob()
+            print "sortint the vacob end"
+
+
+            # generate the dict vacob{'url': index} and reverse_vacob{index: 'url'}
+            words = []
+            for i in xrange(len(self.vacob)):
+                words.append(self.vacob[i][0])
+            reverse_vacob = dict(zip(xrange(len(self.vacob)), words))
+            vacob_dic = dict(zip(words, xrange(len(self.vacob))))
+            del words
+
+            # step 3: after finishing building the vacob and url routes, represent
+            # the routes by index
+            routes = self._routes
+            self._routes = []
+            for url in routes:
+                if url in vacob_dic:
+                    self._routes.append(vacob_dic[url])
+                else:
+                    self._routes.append(-1 if url == -1 else 0)
+
+            # step 4: dump the vacob and other data
+            with open(cache, 'wb') as fi:
+                db = {
+                    'vacob': self.vacob,
+                    # 'reverse_vacob': reverse_vacob
+                }
+                pickle.dump(db, fi, pickle.HIGHEST_PROTOCOL)
+            print 'file {} wrote to cache'.format(cache)
+            # print self._routes[0:100]
+            return self.vacob, reverse_vacob
+        return self.vacob, reverse_vacob
+
+
+    def _get_default_path(self):
+        """ """
+        return os.path.join(dataset.ROOT_DIR, 'data', 'log_data')
+
+    def extractUrl(dataframe):
+        pass
+
+    def generate_batch(self, batch_size, num_skips, skip_window, subsample=None):
+        data_index = self._data_index % len(self._routes)
+        assert batch_size % num_skips == 0
+        assert num_skips <= 2 * skip_window
+        batch = np.ndarray(shape=(batch_size), dtype=np.int32)
+        labels = np.ndarray(shape=(batch_size, 1), dtype=np.int32)
+        span = 2 * skip_window + 1  # [ skip_window target skip_window ]
+        buffer = collections.deque(maxlen=span)
+        def subsampling(uid):
+            ran = (math.sqrt(self.vacob[uid][1] / (subsample * self._epoch_count)) + 1) * (
+                (subsample * self._epoch_count) / (self.vacob[uid][1]))
+            return 0 if ran > np.random.randint(0, 1) else -1
+
+        def fill_url_queue(index):
+            #填充连续的合法的url
+            count, new_index = span, index
+            while count > 0:
+                if self._routes[new_index] == -1:
+                    count = span    #碰到分隔符，重新填充
+                else:
+                    buffer.append(self._routes[new_index])
+                    count -= 1
+                new_index = (new_index + 1) % len(self._routes)
+            return new_index
+
+        data_index = fill_url_queue(data_index)
+        for i in range(batch_size // num_skips):
+            target = skip_window #目标标签位置，对应于窗口的中心位置
+            target_to_avoid = [skip_window]
+            for j in range(num_skips):
+                while target in target_to_avoid:
+                    target = np.random.randint(0, span)
+                target_to_avoid.append(target)
+                batch[i * num_skips + j] = buffer[skip_window]
+                labels[i * num_skips + j] = buffer[target]
+
+            if self._routes[data_index] == -1:
+                data_index = fill_url_queue(data_index)
+                continue
+            buffer.append(self._routes[data_index])
+            data_index = (data_index + 1) % len(self._routes)
+        self._data_index = data_index
+        return batch, labels
+
+
+
+if __name__ == '__main__':
+    import time
+    start = time.time()
+    urldb = UrlRoute('20160720.csv', 1000000, recordlen_min=3)
+
+    # data = urldb._load_url_data()
+    # print data.axes
+    # print pd.to_datetime(data['VISIT_DATE'])
+    vocab, reverse_vacob = urldb.build_dataset()
+    diff = time.time() - start
+    print "build dataset uses time:%d min %d second" % (diff/60, diff - int(diff/60) * 60)
+    print urldb.generate_batch(batch_size=16, num_skips=2, skip_window=1)
