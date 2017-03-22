@@ -1,0 +1,2 @@
+# URL_representation
+Evaluation of electricity business website structure based deep learning：<br>Key Points Tensorflow, Word2Vec, dimensionality reduction and visualization;<br> Introduction: Use user browsing trajectory data and website website topology data to train two kinds of word representations of URL to measure the consistency of two url word representations &lt;<br>  Main Jobs: raw log data pre-processing to product user browsing trajectory, use word2vec to model to train get word representation of url and evaluate the quality of url word presentation
